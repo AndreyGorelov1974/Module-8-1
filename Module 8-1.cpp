@@ -52,5 +52,5 @@ int main() {
 
 	float distance = ((engineForce / massStarship) * std::pow(elapsedTime, 2)) / 2;
 
-	std::cout << "Расстояние которое прошёл звездолёт за " << elapsedTime << " секунд, равно" << distance << std::endl;
+	std::cout << "Расстояние которое прошёл звездолёт за " << elapsedTime << " секунд, равно: " << distance << " метров." << std::endl;
 }
