@@ -46,11 +46,11 @@ int main() {
 	float elapsedTime;
 	std::cin >> elapsedTime;
 	while (elapsedTime < 0) {
-		std::cout << "Вроемя не может быть отрицательным. Введите снова: ";
+		std::cout << "Время не может быть отрицательным. Введите снова: ";
 		std::cin >> elapsedTime;
 	}
 
 	float distance = ((engineForce / massStarship) * std::pow(elapsedTime, 2)) / 2;
 
-	std::cout << "Расстояние которое прошёл звездолёт за " << elapsedTime << " секунд, равно" << distance << std::endl;
+	std::cout << "Расстояние которое прошёл звездолёт за " << elapsedTime << " секунд, равно: " << distance << " метров." << std::endl;
 }
