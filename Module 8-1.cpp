@@ -18,15 +18,39 @@
 
 #include <iostream>
 #include <cmath>
+#include <Windows.h>
 
 int main() {
-	float x, y;
-	std::cout << "Введите координату x: ";
-	std::cin >> x;
-	std::cout << "Введите координату y: ";
-	std::cin >> y;
 
-	float distance = std::sqrt(x * x + y * y);
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 
-	std::cout << "Расстояние от вас до точки равно " << distance << "\n";
+	
+	std::cout << "Введите силу тяги двигатля (в Ньютонах): ";
+	float engineForce;
+	std::cin >> engineForce;
+	while (engineForce < 0) {
+		std::cout << "Сила тяги двигатля не может быть отрицательной. Введите снова: ";
+		std::cin >> engineForce;
+	}
+
+	std::cout << "Введите массу звездолёта (в килограммах): ";
+	float massStarship;
+	std::cin >> massStarship;
+	while (massStarship <= 0) {
+		std::cout << "Масса звездолёта должна быть больше 0. Введите снова: ";
+		std::cin >> massStarship;
+	}
+
+	std::cout << "Введите прошедшее время (в секундах): ";
+	float elapsedTime;
+	std::cin >> elapsedTime;
+	while (elapsedTime < 0) {
+		std::cout << "Вроемя не может быть отрицательным. Введите снова: ";
+		std::cin >> elapsedTime;
+	}
+
+	float distance = ((engineForce / massStarship) * std::pow(elapsedTime, 2)) / 2;
+
+	std::cout << "Расстояние которое прошёл звездолёт за " << elapsedTime << " секунд, равно" << distance << std::endl;
 }
